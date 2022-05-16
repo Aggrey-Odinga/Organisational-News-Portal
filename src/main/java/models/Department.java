@@ -1,24 +1,24 @@
 package models;
 
-public class departments {
+public class Department {
     private String name;
     private String description;
     private int id;
-    private int size;
+    private String employees;
 
-    public departments(String name, String description) {
+    public Department(String name, String description, String employees) {
         this.name = name;
         this.description = description;
-        this.size = 0;
+        this.employees = employees;
     }
 
     public String getName() { return name; }
 
     public void setName(String name) { this.name = name; }
 
-    public int getSize() { return size; }
+    public String getEmployees() { return employees; }
 
-    public void setSize(int size) { this.size = size; }
+    public void setEmployees(String employees) { this.employees = employees; }
 
     public String getDescription() { return description; }
 
