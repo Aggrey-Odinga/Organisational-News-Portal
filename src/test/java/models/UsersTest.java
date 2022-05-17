@@ -17,34 +17,48 @@ public class UsersTest {
     }
 
     @Test
-    public void getId() {
+    public void setUserIdSetsCorrectly_int() throws Exception {
+        Users users = new Users();
+        users.setId(4);
+        assertNotEquals( 1, users.getId());
     }
 
     @Test
-    public void setId() {
+    public void getUserNameReturnsCorrectly_String() {
+        Users users = new Users();
+        assertEquals("Greg", users.getName());
     }
 
     @Test
-    public void getName() {
+    public void setNameSetsCorrectUserName_String() {
+        Users users = new Users();
+        users.setName("Gray");
+        assertNotEquals("Greg", users.getName());
     }
 
     @Test
-    public void setName() {
+    public void getUserDepartmentReturnsCorrectly_String() {
+        Users users = new Users();
+        assertEquals("HR", users.getDepartment());
     }
 
     @Test
-    public void getDepartment() {
+    public void setDepartmentSetsCorrectDepartment_String() {
+        Users users = new Users();
+        users.setDepartment("IT");
+        assertEquals("IT", users.getDepartment());
     }
 
     @Test
-    public void setDepartment() {
+    public void getUserRoleReturnsCorrectly_String() {
+        Users users = new Users();
+        assertEquals("Management", users.getRole());
     }
 
     @Test
-    public void getRole() {
-    }
-
-    @Test
-    public void setRole() {
+    public void setRoleSetsCorrectRole_String() {
+        Users users = new Users();
+        users.setRole("Transport");
+        assertNotEquals("Management", users.getRole());
     }
 }

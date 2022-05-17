@@ -13,6 +13,11 @@ public class Users {
         this.department = department;
         this.role = role;
     }
+
+    public Users() {
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
