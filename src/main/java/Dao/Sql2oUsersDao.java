@@ -34,7 +34,7 @@ public class Sql2oUsersDao implements UsersDao {
 
     @Override
     public void addUserToDepartment(Users user, Department department) {
-        String sql = "INSERT INTO departments_users (userId, departmentId) VALUES (:userId, :departmentId)";
+        String sql = "INSERT INTO department_users (userId, departmentId) VALUES (:userId, :departmentId)";
         try(Connection connection = sql2o.open()){
             connection.createQuery(sql)
                     .addParameter("userId", user.getId())

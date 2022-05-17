@@ -1,5 +1,6 @@
 package Dao;
 
+import models.Department;
 import models.Users;
 import org.eclipse.jetty.server.Authentication;
 import org.junit.After;
@@ -9,18 +10,21 @@ import org.junit.Test;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class Sql2oUsersDaoTest {
     private static Sql2oUsersDao usersDao;
-//    private static Sql2oDepartmentDao departmentDao;
+    private static Sql2oDepartmentDao departmentDao;
     private static Connection connection;
 
-    @BeforeClass
+    @Before
     public void setUp() throws Exception {
         String connectionString = "jdbc:postgresql://localhost:5432/news_portal";
-        Sql2o sql2o = new Sql2o(connectionString, "moringa", "access");
+        Sql2o sql2o = new Sql2o(connectionString, "postgres", "root");
         usersDao = new Sql2oUsersDao(sql2o);
+        departmentDao = new Sql2oDepartmentDao(sql2o);
         connection = sql2o.open();
     }
 
@@ -44,15 +48,16 @@ public class Sql2oUsersDaoTest {
     public void add() {
     }
 
-//    @Test
-//    public void addUserToDepartmentAddsCorrectly() {
-//        Department department = newDepartment();
-//        departmentsDao.add(department);
-//        Users testUser = newUser();
-//        userDao.add(testUser);
-//        userDao.addUserToDepartment(testUser, department);
-//        assertEquals(2, departmentsDao.getAllDepartmentUsers(department.getId()));
-//    }
+    @Test
+    public void addUserToDepartmentAddsCorrectly() {
+        Department department = new Department();
+        departmentDao.add(department);
+        Users testUser = new Users();
+        usersDao.add(testUser);
+        usersDao.addUserToDepartment(testUser, department);
+        List<Users> users = departmentDao.getAllDepartmentUsers(department.getId());
+        assertEquals(1, users.size());
+    }
 
     @Test
     public void findById() {
@@ -60,7 +65,7 @@ public class Sql2oUsersDaoTest {
 
     @Test
     public void deleteById() {
-        Users users = new Users();
+        Users users = new Users("Greg", "Transport", "Human Resource");
         usersDao.add(users);
         usersDao.deleteById(users.getId());
         assertEquals(0, usersDao.getAll().size());
