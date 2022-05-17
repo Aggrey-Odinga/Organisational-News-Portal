@@ -1,6 +1,8 @@
 package models;
 
 
+import java.util.Objects;
+
 public class News{
 
 
@@ -16,43 +18,43 @@ public class News{
         this.description = description;
     }
 
-    public int getId() {
-        return id;
+    public News() {
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof News)) return false;
+        News news = (News) o;
+        return getId() == news.getId() &&
+                getArticleId() == news.getArticleId() &&
+                Objects.equals(getName(), news.getName()) &&
+                Objects.equals(getAuthor(), news.getAuthor()) &&
+                Objects.equals(getDescription(), news.getDescription());
     }
 
-    public int getArticleId() {
-        return articleId;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getArticleId(), getName(), getAuthor(), getDescription());
     }
+    public int getId() { return id; }
 
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
-    }
+    public void setId(int id) { this.id = id; }
 
-    public String getName() {
-        return name;
-    }
+    public int getArticleId() { return articleId; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setArticleId(int articleId) { this.articleId = articleId; }
 
-    public String getAuthor() {
-        return author;
-    }
+    public String getName() { return name; }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getAuthor() { return author; }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setAuthor(String author) { this.author = author; }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
 }
