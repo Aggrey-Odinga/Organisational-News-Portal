@@ -26,6 +26,7 @@ public class UsersTest {
     @Test
     public void getUserNameReturnsCorrectly_String() {
         Users users = new Users();
+        users.setName("Greg");
         assertEquals("Greg", users.getName());
     }
 
@@ -39,6 +40,7 @@ public class UsersTest {
     @Test
     public void getUserDepartmentReturnsCorrectly_String() {
         Users users = new Users();
+        users.setDepartment("HR");
         assertEquals("HR", users.getDepartment());
     }
 
@@ -52,6 +54,7 @@ public class UsersTest {
     @Test
     public void getUserRoleReturnsCorrectly_String() {
         Users users = new Users();
+        users.setRole("Management");
         assertEquals("Management", users.getRole());
     }
 
@@ -61,4 +64,5 @@ public class UsersTest {
         users.setRole("Transport");
         assertNotEquals("Management", users.getRole());
     }
+
 }
