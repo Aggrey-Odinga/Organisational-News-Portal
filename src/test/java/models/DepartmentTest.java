@@ -15,36 +15,53 @@ public class DepartmentTest {
     @After
     public void tearDown() throws Exception {
     }
-
     @Test
-    public void getName() {
+    public void instantiatesDepartmentObjectsCorrectly_true(){
+        Department departments = new Department();
+        assertTrue(departments instanceof Department);
     }
 
     @Test
-    public void setName() {
+    public void getNameOfDepartmentReturnsCorrectly_String() {
+        Department departments = new Department();
+        departments.setName("Human Resource");
+        assertEquals("Human Resource", departments.getName());
     }
 
     @Test
-    public void getEmployees() {
+    public void setDepartmentNameSetsCorrectly_String() {
+        Department departments = new Department();
+        departments.setName("Transport");
+        assertNotEquals("Security", departments.getName());
     }
 
     @Test
-    public void setEmployees() {
+    public void getEmployeesReturnsCorrectly_String() {
+        Department departments = new Department();
+        departments.setEmployees("Griffin");
+        assertEquals("Griffin", departments.getEmployees());
     }
 
     @Test
-    public void getDescription() {
+    public void setEmployeesNameReturnsCorrectly_String() {
+        Department departments = new Department();
+        departments.setEmployees("Ryan");
+        assertNotEquals("Griffin", departments.getEmployees());
     }
 
     @Test
-    public void setDescription() {
+    public void getDepartmentDescriptionReturnsCorrectly_String() {
+        Department departments = new Department();
+        departments.setDescription("Finance");
+        assertEquals("Finance", departments.getDescription());
     }
 
     @Test
-    public void getId() {
+    public void setDescriptionCorrectlySetsDescription_String() {
+        Department departments = new Department();
+        departments.setDescription("Dining");
+        assertEquals("Dining", departments.getDescription());
     }
 
-    @Test
-    public void setId() {
-    }
+
 }

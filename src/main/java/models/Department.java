@@ -14,6 +14,10 @@ public class Department {
         this.employees = employees;
     }
 
+    public Department() {
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
