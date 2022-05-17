@@ -34,4 +34,4 @@ Github link to my site [Aggrey Odinga](https://github.com/Aggrey-Odinga).
    
    - Email me at: aggreyodinga@gmail.com
    
-   ## [License](https://github.com/Aggrey-Odinga//blob/master/LICENSE)
+   ## [License](https://github.com/Aggrey-Odinga/Organisational-News-Portal/blob/master/License)
