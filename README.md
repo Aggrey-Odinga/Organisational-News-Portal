@@ -18,15 +18,26 @@ Github link to my site [Aggrey Odinga](https://github.com/Aggrey-Odinga).
 
  To set up this project:
 
-<p> Clone the repository by executing the following command in your terminal in the directory of your choice - git clone https://github.com/.git<p>
+<p> Clone the repository<p>
 <p> Navigate into the news-portal directory - cd news-portal <p>
 <p> Run gradle build to build the project. </p>
+
+## Database Set Up Instructions
+
+   - To set up the database in a new project:
+   Create a create.sql file in the root project and add the following data:
+   
+  - CREATE DATABASE news_portal;
+   -\c news_portal
+  - CREATE TABLE users(id serial PRIMARY KEY, name VARCHAR, department VARCHAR, role VARCHAR);
+  - CREATE TABLE departments(id serial PRIMARY KEY, name VARCHAR, description VARCHAR, employees VARCHAR);
+  - CREATE TABLE news_articles(id serial PRIMARY KEY, name VARCHAR, author VARCHAR, description VARCHAR, time TIMESTAMP);
+  - CREATE DATABASE news_portal_test WITH TEMPLATE news_portal;`
+  
 
 ## Technologies Used:
    
    - Java.
-   - Sql2o.
-   - Javascript.
    - Postgres.
    - Spark.
    

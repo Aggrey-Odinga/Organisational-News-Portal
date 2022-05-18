@@ -89,6 +89,11 @@ public class App {
             return gson.toJson(user);
         });
 
+//        filters
+
+        after((req, res) ->{
+            res.type("application/json");
+        });
 
 
 
