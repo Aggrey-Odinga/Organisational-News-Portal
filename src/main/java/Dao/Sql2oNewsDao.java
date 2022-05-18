@@ -58,6 +58,5 @@ public class Sql2oNewsDao implements NewsDao{
         } catch (Sql2oException ex){
             System.out.println(ex);
         }
-
     }
 }
